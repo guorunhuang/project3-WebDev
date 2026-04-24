@@ -3,6 +3,12 @@
 A full-stack Sudoku web application built with React, Express, and MongoDB. 
 Players can browse, create, and solve puzzles across two difficulty modes, create custom board layouts, track wins on a live leaderboard, and delete games they own.
 
+## Git repo: https://github.com/guorunhuang/project3-WebDev(indlude README.md)
+
+## Render deployment: https://project3-webdev-gosudoku.onrender.com
+
+## Teams video introducing this project: https://northeastern-my.sharepoint.com/:v:/g/personal/huang_guor_northeastern_edu/IQBnfM8n6-Z8S6DYUfxRsndpAbI4q5mHr07R0pLUfRd9sFQ?e=s0VCWz
+
 ## Local Development
 
 // ── MongoDB Username r38932537_db_user Password vntYNvd4cUNjM7bA────────────────────────────────────────────────────────────────
