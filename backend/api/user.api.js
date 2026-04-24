@@ -5,6 +5,7 @@ import User    from './db/schema/user.schema.js';
 const router = express.Router();
 const SALT_ROUNDS = 10;
 const COOKIE_NAME = 'GoSudoku_user';
+const isProduction = process.env.NODE_ENV === 'production';
 
 // ── POST /api/users/register ───────────────────────────────────────────────
 router.post('/register', async (req, res) => {
@@ -23,7 +24,11 @@ router.post('/register', async (req, res) => {
     res.cookie(COOKIE_NAME, username, {
       httpOnly: true,
       sameSite: 'lax',
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+      
+      secure: isProduction, 
+      
+      path: '/', 
     });
 
     return res.status(201).json({ username: user.username });
@@ -52,6 +57,10 @@ router.post('/login', async (req, res) => {
       httpOnly: true,
       sameSite: 'lax',
       maxAge: 7 * 24 * 60 * 60 * 1000,
+      
+      secure: isProduction, 
+      
+      path: '/', 
     });
 
     return res.json({ username: user.username });
