@@ -35,4 +35,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(frontend_dir, 'index.html'));
 });
 
-app.listen(8000, () => console.log('GoSudoku server running on port 8000'));
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`GoSudoku server running on port ${PORT}`);
+});
